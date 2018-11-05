@@ -50,7 +50,7 @@ function Itext(conf){
 };
 Itext.prototype={
 	_init:function(){
-		if(this.node instanceof Node){
+		if(!this.node instanceof Node){
 			console.log("请传入正确的节点");
 			return;
 		}
