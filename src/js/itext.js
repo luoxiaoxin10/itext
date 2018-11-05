@@ -43,13 +43,17 @@ Itime.prototype={
 
 //入口类
 function Itext(conf){
-	this.node=conf.el;
-	this.text=conf.text||"一个比较简单的文字输出效果的小插件，做的很简单！希望大家提出宝贵的意见";
+	this.node=conf.el||"";
+	this.text=conf.text||"一个比较简单的文字输出效果的小插件，做的很简单！希望大家提出宝贵的意见。";
 	this.interval=conf.interval||1000;
 	this._init();
 };
 Itext.prototype={
 	_init:function(){
+		if(this.node instanceof Node){
+			console.log("请传入正确的节点");
+			return;
+		}
 		this._time=new Itime(this);
 	},
 	_empty:function(){
